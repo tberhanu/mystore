@@ -84,19 +84,21 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  # if ENV["RAILS_LOG_TO_STDOUT"].present?
-  #   logger           = ActiveSupport::Logger.new(STDOUT)
-  #   logger.formatter = config.log_formatter
-  #   config.logger    = ActiveSupport::TaggedLogging.new(logger)
-  # end
-################
-# config/environments/production.rb
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
-    config.logger = ActiveSupport::TaggedLogging.new(logger)
+    config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
+
+  config.assets.initialize_on_precompile = false
+################
+# # config/environments/production.rb
+#   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+#   if ENV["RAILS_LOG_TO_STDOUT"].present?
+#     logger           = ActiveSupport::Logger.new(STDOUT)
+#     logger.formatter = config.log_formatter
+#     config.logger = ActiveSupport::TaggedLogging.new(logger)
+#   end
 
 ##################
   # Do not dump schema after migrations.
