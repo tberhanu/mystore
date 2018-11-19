@@ -80,5 +80,3 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: 'master'
-
-gem 'spree_simple_sales', path: '../spree_extensions/spree_simple_sales'
